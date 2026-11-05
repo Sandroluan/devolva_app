@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-merged_res-31:\\layout_item_emprestimo.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-main-33:\\layout\\item_emprestimo.xml"
+    },
+    {
+        "merged": "com.exemplo.meuapp-merged_res-31:/drawable_bg_badge.xml.flat",
+        "source": "com.exemplo.meuapp-main-33:/drawable/bg_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-merged_res-31:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-main-33:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-merged_res-31:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-main-33:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-merged_res-31:\\layout_dialog_novo_emprestimo.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\8.5\\com.exemplo.meuapp-main-33:\\layout\\dialog_novo_emprestimo.xml"
+    }
+]

@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+drawable bg_badge
+id btnEntrar
+id edtEmail
+id edtLivroId
+id edtSenha
+id edtUserId
+id fab
+id recycler
+id txtAtrasados
+id txtBadge
+id txtData
+id txtMulta
+id txtMultaTotal
+id txtSair
+id txtTitulo
+id txtUsuario
+layout activity_login
+layout activity_main
+layout dialog_novo_emprestimo
+layout item_emprestimo
