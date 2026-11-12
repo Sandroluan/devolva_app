@@ -1,10 +1,13 @@
-#Thu Nov 05 17:59:13 BRT 2026
-base.2=C\:\\Users\\Luan\\Desktop\\devolva_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+#Thu Nov 12 17:55:30 BRT 2026
+path.3=classes2.dex
 path.2=5/classes.dex
-base.1=C\:\\Users\\Luan\\Desktop\\devolva_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 path.1=0/classes.dex
+path.0=classes.dex
+base.3=C\:\\Users\\Luan\\Desktop\\devolva_app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.2=C\:\\Users\\Luan\\Desktop\\devolva_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.1=C\:\\Users\\Luan\\Desktop\\devolva_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.0=C\:\\Users\\Luan\\Desktop\\devolva_app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-path.0=classes.dex

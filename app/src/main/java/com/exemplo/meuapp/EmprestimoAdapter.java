@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,10 +23,12 @@ public class EmprestimoAdapter extends RecyclerView.Adapter<EmprestimoAdapter.VH
     }
 
     private final List<Emprestimo> lista = new ArrayList<>();
+    private final boolean mostrarUsuario; // admin vê quem pegou o livro
     private final OnItemClick listener;
     private final NumberFormat moeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
-    public EmprestimoAdapter(OnItemClick listener) {
+    public EmprestimoAdapter(boolean mostrarUsuario, OnItemClick listener) {
+        this.mostrarUsuario = mostrarUsuario;
         this.listener = listener;
     }
 
@@ -48,7 +51,23 @@ public class EmprestimoAdapter extends RecyclerView.Adapter<EmprestimoAdapter.VH
         Emprestimo e = lista.get(position);
 
         h.txtTitulo.setText(e.tituloLivro);
-        h.txtUsuario.setText(e.nomeUsuario);
+
+        if (e.autor == null || e.autor.isEmpty()) {
+            h.txtAutor.setVisibility(View.GONE);
+        } else {
+            h.txtAutor.setVisibility(View.VISIBLE);
+            h.txtAutor.setText(e.autor);
+        }
+
+        if (mostrarUsuario) {
+            h.txtUsuario.setVisibility(View.VISIBLE);
+            h.txtUsuario.setText("Emprestado para: " + e.nomeUsuario);
+        } else {
+            h.txtUsuario.setVisibility(View.GONE);
+        }
+
+        Capas.carregar(h.imgCapa, e.capaUrl);
+
         h.txtData.setText("Data devolução: " + formatarData(e.prazo));
         h.txtMulta.setText("Multa: " + moeda.format(e.valorMulta));
 
@@ -80,11 +99,14 @@ public class EmprestimoAdapter extends RecyclerView.Adapter<EmprestimoAdapter.VH
     }
 
     static class VH extends RecyclerView.ViewHolder {
-        TextView txtTitulo, txtUsuario, txtBadge, txtData, txtMulta;
+        ImageView imgCapa;
+        TextView txtTitulo, txtAutor, txtUsuario, txtBadge, txtData, txtMulta;
 
         VH(@NonNull View itemView) {
             super(itemView);
+            imgCapa = itemView.findViewById(R.id.imgCapa);
             txtTitulo = itemView.findViewById(R.id.txtTitulo);
+            txtAutor = itemView.findViewById(R.id.txtAutor);
             txtUsuario = itemView.findViewById(R.id.txtUsuario);
             txtBadge = itemView.findViewById(R.id.txtBadge);
             txtData = itemView.findViewById(R.id.txtData);

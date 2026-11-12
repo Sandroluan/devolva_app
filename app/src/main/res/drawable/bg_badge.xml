@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
+<!-- A cor é aplicada por código (backgroundTint). Se você já tem um bg_badge.xml, mantenha o seu. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="#FFFFFF" />
     <corners android:radius="12dp" />
 </shape>

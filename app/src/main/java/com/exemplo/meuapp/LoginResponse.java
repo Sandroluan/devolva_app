@@ -10,6 +10,7 @@ public class LoginResponse {
     public static class User {
         @SerializedName("user_id")
         public int userId;
+        public String name;
         public String email;
         public String tipo;
     }

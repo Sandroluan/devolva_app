@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="24dp">
+
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A capa e a descrição são buscadas automaticamente (Google Books)."
+            android:textColor="#616161"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/edtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título"
+            android:inputType="textCapSentences"
+            android:maxLength="80" />
+
+        <EditText
+            android:id="@+id/edtAutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Autor"
+            android:inputType="textCapWords"
+            android:maxLength="150" />
+
+        <EditText
+            android:id="@+id/edtDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="Descrição"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="3" />
+
+        <EditText
+            android:id="@+id/edtCapaUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL da capa"
+            android:inputType="textUri"
+            android:maxLength="500" />
+    </LinearLayout>
+</ScrollView>

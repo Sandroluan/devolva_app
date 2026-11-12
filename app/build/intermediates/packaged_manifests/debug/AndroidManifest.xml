@@ -21,12 +21,14 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:extractNativeLibs="false"
-        android:label="MeuApp"
+        android:label="Devolva"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        android:theme="@style/Theme.Devolva"
         android:usesCleartextTraffic="true" >
+
+        <!-- O app sempre abre no login; ele decide para qual tela ir -->
         <activity
-            android:name="com.exemplo.meuapp.MainActivity"
+            android:name="com.exemplo.meuapp.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +36,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.exemplo.meuapp.AdminMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.exemplo.meuapp.ClientMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.exemplo.meuapp.BookDetailActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

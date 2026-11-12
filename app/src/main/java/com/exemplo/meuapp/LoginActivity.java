@@ -1,7 +1,6 @@
 package com.exemplo.meuapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,10 +21,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // já logado? vai direto para a lista
-        SharedPreferences prefs = getSharedPreferences("devolva", MODE_PRIVATE);
-        if (prefs.getString("token", null) != null) {
-            abrirMain();
+        // já logado? vai direto para a tela certa (admin ou cliente)
+        if (Session.isLogged(this)) {
+            abrirTelaInicial();
             return;
         }
 
@@ -35,6 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         btnEntrar = findViewById(R.id.btnEntrar);
 
         btnEntrar.setOnClickListener(v -> fazerLogin());
+
+        if (getIntent().getBooleanExtra("expirou", false)) {
+            Toast.makeText(this, "Sessão expirada. Entre novamente.", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void fazerLogin() {
@@ -53,13 +55,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 btnEntrar.setEnabled(true);
 
-                if (response.isSuccessful() && response.body() != null) {
-                    LoginResponse body = response.body();
-                    getSharedPreferences("devolva", MODE_PRIVATE).edit()
-                            .putString("token", body.token)
-                            .putInt("user_id", body.user.userId)
-                            .apply();
-                    abrirMain();
+                LoginResponse body = response.body();
+                if (response.isSuccessful() && body != null && body.token != null && body.user != null) {
+                    Session.save(LoginActivity.this, body);
+                    abrirTelaInicial();
                 } else {
                     Toast.makeText(LoginActivity.this, "E-mail ou senha incorretos", Toast.LENGTH_SHORT).show();
                 }
@@ -73,8 +72,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void abrirMain() {
-        startActivity(new Intent(this, MainActivity.class));
+    // tipo "admin" -> tela do administrador; qualquer outro -> tela do cliente
+    private void abrirTelaInicial() {
+        Class<?> destino = Session.isAdmin(this) ? AdminMainActivity.class : ClientMainActivity.class;
+        startActivity(new Intent(this, destino));
         finish();
     }
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.exemplo.meuapp-mergeDebugResources-29:/values-sq/values-sq.xml",
+            "outputFile": "com.exemplo.meuapp-mergeDebugResources-31:/values-sq/values-sq.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\69031d9de34e6ae4e80492f7a424b6d1\\transformed\\core-1.9.0\\res\\values-sq\\values-sq.xml",

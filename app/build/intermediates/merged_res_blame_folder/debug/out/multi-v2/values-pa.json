@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.exemplo.meuapp-mergeDebugResources-29:/values-pa/values-pa.xml",
+            "outputFile": "com.exemplo.meuapp-mergeDebugResources-31:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\6fe221ef3627acc9045c8968b4817037\\transformed\\material-1.11.0\\res\\values-pa\\values-pa.xml",
